@@ -8,9 +8,9 @@ namespace AlgorithmsBL.Algorithms
 {
     public abstract class SortBase
     {
-        public void Swap(ref double first, ref double second)
+        public void Swap<T>(ref T first, ref T second)
         {
-            double temp;
+            T temp;
             temp = first;
             first = second;
             second = temp;

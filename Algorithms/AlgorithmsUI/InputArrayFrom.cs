@@ -58,17 +58,10 @@ namespace AlgorithmsUI
 
         private void btn_Ok_Click(object sender, EventArgs e)
         {
-            try
+
+            for (int i = 0; i < ArrayItem.Array.Length; ++i)
             {
-                for (int i = 0; i < ArrayItem.Array.Length; ++i)
-                {
-                    ArrayItem.Array[i] = double.Parse(dataGridView_Array.Rows[1].Cells[i].Value.ToString());
-                }
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Unable to convert. ");
-                return;
+                ArrayItem.Array[i] = double.Parse(dataGridView_Array.Rows[1].Cells[i].Value.ToString());
             }
 
             DialogResult = DialogResult.OK;

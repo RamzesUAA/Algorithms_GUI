@@ -28,7 +28,7 @@ namespace AlgorithmsBL.Algorithms
                     steps += $"Step {counter}: ";
                     foreach(var item in arr)
                     {
-                        steps += $"{item} ";
+                        steps += $"{item}   ";
                     }
                     steps += "\n";
                 }
