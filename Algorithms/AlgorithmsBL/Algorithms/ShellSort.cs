@@ -10,8 +10,9 @@ namespace AlgorithmsBL.Algorithms
     {
         public void shellSort(double[] arr, ref string str) 
         {
-            //відстань між елементами, які порівнюються
+            str = "";
             var d = arr.Length / 2;
+            int counter = 0;
             while (d >= 1)
             {
                 for (var i = d; i < arr.Length; i++)
@@ -22,8 +23,15 @@ namespace AlgorithmsBL.Algorithms
                         Swap(ref arr[j], ref arr[j - d]);
                         j = j - d;
                     }
+                    str += $"Step {counter}: ";
+                    foreach (var item in arr)
+                    {
+                        str += item;
+                        str += ", ";
+                    }
+                    str += "\n";
+                    counter++;
                 }
-
                 d = d / 2;
             }
         }

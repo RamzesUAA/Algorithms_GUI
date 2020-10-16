@@ -12,7 +12,6 @@ namespace AlgorithmsUI
 {
     public partial class Main : Form
     {
-
         ArrayItem ArrayItem;
         List<Product> Products;
         string Steps = "";
@@ -25,8 +24,8 @@ namespace AlgorithmsUI
             btn_BubbleSort.Enabled = false;
             btn_SelectionSort.Enabled = false;
             btn_ShellSort.Enabled = false;
-
         }
+
         void SetDataGridViewWithArray(DataGridView dataGridView)
         {
             if (ArrayItem.Array.Length == 0) return;
@@ -106,8 +105,8 @@ namespace AlgorithmsUI
             InputArrayFrom inputArrayFrom = new InputArrayFrom(ArrayItem);
             if (inputArrayFrom.ShowDialog() == DialogResult.OK)
             {
+                ArrayItem.CinfigurateEvenNumbers();
                 SetDataGridViewWithArray(dataGridView_InitialArray);
-                ArrayItem.DeleteMaxAndMin();
             }
         }
         private void btn_EnterArray_Click(object sender, System.EventArgs e)
@@ -115,15 +114,12 @@ namespace AlgorithmsUI
             switch (comboBox_ChooseLab.SelectedItem.ToString())
             {
                 case "laba1":
-                    btn_BubbleSort.Enabled = true;
                     InputArrayForFirsLab();
                     break;
                 case "laba2":
-                    btn_SelectionSort.Enabled = true;
                     InputArrayForSecondLab();
                     break;
                 case "laba3":
-                    btn_ShellSort.Enabled = true;
                     InputArrayForThirdLab();
                     break;
                 case null:
@@ -165,7 +161,6 @@ namespace AlgorithmsUI
         private void btn_BubbleSort_Click(object sender, EventArgs e)
         {
             BubbleSort bubble = new BubbleSort();
-
             Stopwatch stopwatch = new Stopwatch();
 
             // Begin timing
@@ -182,6 +177,72 @@ namespace AlgorithmsUI
         }
 
         private void btn_ShellSort_Click(object sender, EventArgs e)
+        {
+            ShellSort bubble = new ShellSort();
+            Stopwatch stopwatch = new Stopwatch();
+
+            // Begin timing
+            stopwatch.Start();
+            bubble.shellSort(ArrayItem.Array, ref Steps);
+
+            // Stop timing
+            stopwatch.Stop();
+
+            // Write result
+            double s = 22.44;
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            SetDataGridViewWithArray(dataGridView_ResultArray);
+        }
+
+        void clearGridsAndArray()
+        {
+            ArrayItem = new ArrayItem();
+            dataGridView_InitialArray.Columns.Clear();
+            dataGridView_InitialArray.Refresh();
+
+            dataGridView_ResultArray.Columns.Clear();
+            dataGridView_ResultArray.Refresh();
+        }
+
+
+        private void comboBox_ChooseLab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (comboBox_ChooseLab.SelectedItem.ToString())
+            {
+                case "laba1":
+                    btn_BubbleSort.Enabled = true;
+                    btn_SelectionSort.Enabled = false;
+                    btn_ShellSort.Enabled = true;
+                    clearGridsAndArray();
+                    break;
+                case "laba2":
+                    btn_BubbleSort.Enabled = false;
+                    btn_SelectionSort.Enabled = true;
+                    btn_ShellSort.Enabled = false;
+                    break;
+                case "laba3":
+                    btn_BubbleSort.Enabled = true;
+                    btn_SelectionSort.Enabled = false;
+                    btn_ShellSort.Enabled = true;
+                    clearGridsAndArray();
+                    break;
+                case null:
+                    break;
+            }
+        }
+
+        private void btn_MergeSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_QuickSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CountingSort_Click(object sender, EventArgs e)
         {
 
         }

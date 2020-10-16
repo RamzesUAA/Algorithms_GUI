@@ -41,6 +41,9 @@
             this.btn_SelectionSort = new System.Windows.Forms.Button();
             this.btn_ShellSort = new System.Windows.Forms.Button();
             this.btn_BubbleSort = new System.Windows.Forms.Button();
+            this.btn_MergeSort = new System.Windows.Forms.Button();
+            this.btn_QuickSort = new System.Windows.Forms.Button();
+            this.btn_CountingSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InitialArray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ResultArray)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +141,7 @@
             this.comboBox_ChooseLab.Name = "comboBox_ChooseLab";
             this.comboBox_ChooseLab.Size = new System.Drawing.Size(121, 21);
             this.comboBox_ChooseLab.TabIndex = 12;
+            this.comboBox_ChooseLab.SelectedIndexChanged += new System.EventHandler(this.comboBox_ChooseLab_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -150,9 +154,9 @@
             // 
             // btn_SelectionSort
             // 
-            this.btn_SelectionSort.Location = new System.Drawing.Point(322, 300);
+            this.btn_SelectionSort.Location = new System.Drawing.Point(308, 300);
             this.btn_SelectionSort.Name = "btn_SelectionSort";
-            this.btn_SelectionSort.Size = new System.Drawing.Size(111, 47);
+            this.btn_SelectionSort.Size = new System.Drawing.Size(123, 47);
             this.btn_SelectionSort.TabIndex = 14;
             this.btn_SelectionSort.Text = "Selection sort";
             this.btn_SelectionSort.UseVisualStyleBackColor = true;
@@ -160,9 +164,9 @@
             // 
             // btn_ShellSort
             // 
-            this.btn_ShellSort.Location = new System.Drawing.Point(458, 300);
+            this.btn_ShellSort.Location = new System.Drawing.Point(466, 300);
             this.btn_ShellSort.Name = "btn_ShellSort";
-            this.btn_ShellSort.Size = new System.Drawing.Size(111, 47);
+            this.btn_ShellSort.Size = new System.Drawing.Size(123, 47);
             this.btn_ShellSort.TabIndex = 15;
             this.btn_ShellSort.Text = "Shell sort";
             this.btn_ShellSort.UseVisualStyleBackColor = true;
@@ -178,11 +182,44 @@
             this.btn_BubbleSort.UseVisualStyleBackColor = true;
             this.btn_BubbleSort.Click += new System.EventHandler(this.btn_BubbleSort_Click);
             // 
+            // btn_MergeSort
+            // 
+            this.btn_MergeSort.Location = new System.Drawing.Point(161, 373);
+            this.btn_MergeSort.Name = "btn_MergeSort";
+            this.btn_MergeSort.Size = new System.Drawing.Size(123, 47);
+            this.btn_MergeSort.TabIndex = 17;
+            this.btn_MergeSort.Text = "Merge sort";
+            this.btn_MergeSort.UseVisualStyleBackColor = true;
+            this.btn_MergeSort.Click += new System.EventHandler(this.btn_MergeSort_Click);
+            // 
+            // btn_QuickSort
+            // 
+            this.btn_QuickSort.Location = new System.Drawing.Point(308, 373);
+            this.btn_QuickSort.Name = "btn_QuickSort";
+            this.btn_QuickSort.Size = new System.Drawing.Size(123, 47);
+            this.btn_QuickSort.TabIndex = 18;
+            this.btn_QuickSort.Text = "Quick sort";
+            this.btn_QuickSort.UseVisualStyleBackColor = true;
+            this.btn_QuickSort.Click += new System.EventHandler(this.btn_QuickSort_Click);
+            // 
+            // btn_CountingSort
+            // 
+            this.btn_CountingSort.Location = new System.Drawing.Point(466, 373);
+            this.btn_CountingSort.Name = "btn_CountingSort";
+            this.btn_CountingSort.Size = new System.Drawing.Size(123, 47);
+            this.btn_CountingSort.TabIndex = 19;
+            this.btn_CountingSort.Text = "Counting sort";
+            this.btn_CountingSort.UseVisualStyleBackColor = true;
+            this.btn_CountingSort.Click += new System.EventHandler(this.btn_CountingSort_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 420);
+            this.ClientSize = new System.Drawing.Size(798, 453);
+            this.Controls.Add(this.btn_CountingSort);
+            this.Controls.Add(this.btn_QuickSort);
+            this.Controls.Add(this.btn_MergeSort);
             this.Controls.Add(this.btn_BubbleSort);
             this.Controls.Add(this.btn_ShellSort);
             this.Controls.Add(this.btn_SelectionSort);
@@ -222,6 +259,9 @@
         private System.Windows.Forms.Button btn_SelectionSort;
         private System.Windows.Forms.Button btn_ShellSort;
         private System.Windows.Forms.Button btn_BubbleSort;
+        private System.Windows.Forms.Button btn_MergeSort;
+        private System.Windows.Forms.Button btn_QuickSort;
+        private System.Windows.Forms.Button btn_CountingSort;
     }
 }
 

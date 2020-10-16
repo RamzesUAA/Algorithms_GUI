@@ -28,5 +28,16 @@ namespace AlgorithmsBL
             double min = Array.Min();
             Array = Array.Where(p => p != max && p != min).ToArray();
         }
+
+        public void CinfigurateEvenNumbers()
+        {
+            for(int i = 0; i < Array.Length; ++i)
+            {
+                if(Array[i] % 2 == 0)
+                {
+                    Array[i] = Math.Round(Math.Sqrt(Math.Abs(Array[i] - 10)));
+                }
+            }
+        }
     }
 }
