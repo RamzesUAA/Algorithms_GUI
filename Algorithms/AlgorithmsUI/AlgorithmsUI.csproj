@@ -65,6 +65,12 @@
     <Compile Include="InputProductForm.Designer.cs">
       <DependentUpon>InputProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputTwoDimensionalArrayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputTwoDimensionalArrayForm.Designer.cs">
+      <DependentUpon>InputTwoDimensionalArrayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputProductForm.resx">
       <DependentUpon>InputProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputTwoDimensionalArrayForm.resx">
+      <DependentUpon>InputTwoDimensionalArrayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

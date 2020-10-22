@@ -8,23 +8,47 @@ using System.Windows.Forms;
 using AlgorithmsBL;
 using AlgorithmsBL.Algorithms;
 
+
 namespace AlgorithmsUI
 {
     public partial class Main : Form
     {
+
         ArrayItem ArrayItem;
         List<Product> Products;
+        TwoDimensionalArrayItem DoubleDimArray;
+        double[,] pairItem;
         string Steps = "";
         public Main()
         {
             ArrayItem = new ArrayItem();
             Products = new List<Product>();
-            InitializeComponent();
+            DoubleDimArray = new TwoDimensionalArrayItem();
 
-            btn_BubbleSort.Enabled = false;
-            btn_SelectionSort.Enabled = false;
-            btn_ShellSort.Enabled = false;
+            InitializeComponent();
         }
+
+        void SetDataGridViewWithTwoDimensionsArray(DataGridView dataGridView)
+        {
+            if (DoubleDimArray.Array.Length == 0) return;
+            var table = new DataTable();
+
+            dataGridView.ColumnCount = (int)DoubleDimArray.Array.GetLength(1);
+
+            for (int i = 0; i < DoubleDimArray.Array.GetLength(0); ++i)
+            {
+                dataGridView.Rows.Add();
+            }
+
+            for (int i = 0; i < DoubleDimArray.Array.GetLength(0); ++i)
+            {
+                for(int j = 0; j < DoubleDimArray.Array.GetLength(1); ++j)
+                {
+                    dataGridView.Rows[i].Cells[j].Value = DoubleDimArray.Array[i, j];
+                }
+            }
+        }
+
 
         void SetDataGridViewWithArray(DataGridView dataGridView)
         {
@@ -109,6 +133,25 @@ namespace AlgorithmsUI
                 SetDataGridViewWithArray(dataGridView_InitialArray);
             }
         }
+
+        private void InputArrayForFourthLab()
+        {
+            InputTwoDimensionalArrayForm inputArrayFrom = new InputTwoDimensionalArrayForm(DoubleDimArray);
+            if (inputArrayFrom.ShowDialog() == DialogResult.OK)
+            {
+                SetDataGridViewWithTwoDimensionsArray(dataGridView_InitialArray);
+            }
+        }
+
+        private void InputArrayForFifthLab()
+        {
+            InputArrayFrom inputArrayFrom = new InputArrayFrom(ArrayItem);
+            if (inputArrayFrom.ShowDialog() == DialogResult.OK)
+            {
+                ArrayItem.DeleteMostFrequncyElement();
+                SetDataGridViewWithArray(dataGridView_InitialArray);
+            }
+        }
         private void btn_EnterArray_Click(object sender, System.EventArgs e)
         {
             switch (comboBox_ChooseLab.SelectedItem.ToString())
@@ -121,6 +164,14 @@ namespace AlgorithmsUI
                     break;
                 case "laba3":
                     InputArrayForThirdLab();
+                    break;
+                case "laba4":
+                    clearGridsAndArray();
+                    InputArrayForFourthLab();
+                    break;
+                case "laba5":
+                    clearGridsAndArray();
+                    InputArrayForFifthLab();
                     break;
                 case null:
                     MessageBox.Show("Enter number of laba");
@@ -171,7 +222,6 @@ namespace AlgorithmsUI
             stopwatch.Stop();
 
             // Write result
-            double s = 22.44;
             label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
             SetDataGridViewWithArray(dataGridView_ResultArray);
         }
@@ -189,14 +239,12 @@ namespace AlgorithmsUI
             stopwatch.Stop();
 
             // Write result
-            double s = 22.44;
             label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
             SetDataGridViewWithArray(dataGridView_ResultArray);
         }
 
         void clearGridsAndArray()
         {
-            ArrayItem = new ArrayItem();
             dataGridView_InitialArray.Columns.Clear();
             dataGridView_InitialArray.Refresh();
 
@@ -214,17 +262,53 @@ namespace AlgorithmsUI
                     btn_BubbleSort.Enabled = true;
                     btn_SelectionSort.Enabled = false;
                     btn_ShellSort.Enabled = true;
+                    btn_MergeSort.Enabled = false;
+                    btn_QuickSort.Enabled = false;
+                    btn_CountingSort.Enabled = false;
                     clearGridsAndArray();
                     break;
                 case "laba2":
                     btn_BubbleSort.Enabled = false;
                     btn_SelectionSort.Enabled = true;
                     btn_ShellSort.Enabled = false;
+                    btn_MergeSort.Enabled = false;
+                    btn_QuickSort.Enabled = false;
+                    btn_CountingSort.Enabled = false;
                     break;
                 case "laba3":
                     btn_BubbleSort.Enabled = true;
                     btn_SelectionSort.Enabled = false;
                     btn_ShellSort.Enabled = true;
+                    btn_MergeSort.Enabled = false;
+                    btn_QuickSort.Enabled = false;
+                    btn_CountingSort.Enabled = false;
+                    clearGridsAndArray();
+                    break;
+                case "laba4":
+                    btn_BubbleSort.Enabled = false;
+                    btn_SelectionSort.Enabled = false;
+                    btn_ShellSort.Enabled = false;
+                    btn_MergeSort.Enabled = true;
+                    btn_QuickSort.Enabled = false;
+                    btn_CountingSort.Enabled = false;
+                    clearGridsAndArray();
+                    break;
+                case "laba5":
+                    btn_BubbleSort.Enabled = false;
+                    btn_SelectionSort.Enabled = false;
+                    btn_ShellSort.Enabled = false;
+                    btn_MergeSort.Enabled = false;
+                    btn_QuickSort.Enabled = true;
+                    btn_CountingSort.Enabled = false;
+                    clearGridsAndArray();
+                    break;
+                case "laba6":
+                    btn_BubbleSort.Enabled = false;
+                    btn_SelectionSort.Enabled = false;
+                    btn_ShellSort.Enabled = false;
+                    btn_MergeSort.Enabled = false;
+                    btn_QuickSort.Enabled = false;
+                    btn_CountingSort.Enabled = false;
                     clearGridsAndArray();
                     break;
                 case null:
@@ -235,10 +319,32 @@ namespace AlgorithmsUI
         private void btn_MergeSort_Click(object sender, EventArgs e)
         {
 
+            MergeSort merge = new MergeSort();
+            Stopwatch stopwatch = new Stopwatch();
+
+            // Begin timing
+            stopwatch.Start();
+            merge.mergeSort(DoubleDimArray.Array, DoubleDimArray.SIZE, 0, DoubleDimArray.SIZE - 1, ref Steps);
+           // merge.StartMergeSort(DoubleDimArray.Array, DoubleDimArray.SIZE, 0, DoubleDimArray.SIZE - 1, ref Steps);
+
+            // Stop timing
+            stopwatch.Stop();
+
+            // Write result
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            SetDataGridViewWithTwoDimensionsArray(dataGridView_ResultArray);
         }
 
         private void btn_QuickSort_Click(object sender, EventArgs e)
         {
+            QuickSort quickSort = new QuickSort();
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            quickSort.Quick_Sort(ArrayItem.Array, 0, ArrayItem.Array.Length - 1);
+            stopwatch.Stop();
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            SetDataGridViewWithArray(dataGridView_ResultArray);
 
         }
 

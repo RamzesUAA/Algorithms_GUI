@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 52);
+            this.label1.Location = new System.Drawing.Point(224, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // btn_EnterArray
             // 
-            this.btn_EnterArray.Location = new System.Drawing.Point(25, 300);
+            this.btn_EnterArray.Location = new System.Drawing.Point(91, 399);
             this.btn_EnterArray.Name = "btn_EnterArray";
             this.btn_EnterArray.Size = new System.Drawing.Size(111, 47);
             this.btn_EnterArray.TabIndex = 1;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 172);
+            this.label2.Location = new System.Drawing.Point(224, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 3;
@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 35);
+            this.label3.Location = new System.Drawing.Point(12, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 5;
@@ -91,11 +91,11 @@
             this.dataGridView_InitialArray.AllowUserToResizeColumns = false;
             this.dataGridView_InitialArray.AllowUserToResizeRows = false;
             this.dataGridView_InitialArray.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_InitialArray.Location = new System.Drawing.Point(227, 80);
+            this.dataGridView_InitialArray.Location = new System.Drawing.Point(227, 25);
             this.dataGridView_InitialArray.MultiSelect = false;
             this.dataGridView_InitialArray.Name = "dataGridView_InitialArray";
             this.dataGridView_InitialArray.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView_InitialArray.Size = new System.Drawing.Size(413, 47);
+            this.dataGridView_InitialArray.Size = new System.Drawing.Size(413, 172);
             this.dataGridView_InitialArray.TabIndex = 6;
             // 
             // dataGridView_ResultArray
@@ -104,17 +104,17 @@
             this.dataGridView_ResultArray.AllowUserToResizeColumns = false;
             this.dataGridView_ResultArray.AllowUserToResizeRows = false;
             this.dataGridView_ResultArray.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_ResultArray.Location = new System.Drawing.Point(227, 188);
+            this.dataGridView_ResultArray.Location = new System.Drawing.Point(227, 233);
             this.dataGridView_ResultArray.MultiSelect = false;
             this.dataGridView_ResultArray.Name = "dataGridView_ResultArray";
             this.dataGridView_ResultArray.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView_ResultArray.Size = new System.Drawing.Size(413, 47);
+            this.dataGridView_ResultArray.Size = new System.Drawing.Size(413, 160);
             this.dataGridView_ResultArray.TabIndex = 7;
             // 
             // label_Time
             // 
             this.label_Time.AutoSize = true;
-            this.label_Time.Location = new System.Drawing.Point(88, 35);
+            this.label_Time.Location = new System.Drawing.Point(88, 49);
             this.label_Time.Name = "label_Time";
             this.label_Time.Size = new System.Drawing.Size(13, 13);
             this.label_Time.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // button_Steps
             // 
-            this.button_Steps.Location = new System.Drawing.Point(608, 300);
+            this.button_Steps.Location = new System.Drawing.Point(674, 399);
             this.button_Steps.Name = "button_Steps";
             this.button_Steps.Size = new System.Drawing.Size(111, 47);
             this.button_Steps.TabIndex = 9;
@@ -136,8 +136,10 @@
             this.comboBox_ChooseLab.Items.AddRange(new object[] {
             "laba1",
             "laba2",
-            "laba3"});
-            this.comboBox_ChooseLab.Location = new System.Drawing.Point(15, 121);
+            "laba3",
+            "laba4",
+            "laba5"});
+            this.comboBox_ChooseLab.Location = new System.Drawing.Point(15, 135);
             this.comboBox_ChooseLab.Name = "comboBox_ChooseLab";
             this.comboBox_ChooseLab.Size = new System.Drawing.Size(121, 21);
             this.comboBox_ChooseLab.TabIndex = 12;
@@ -146,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 95);
+            this.label4.Location = new System.Drawing.Point(12, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 13;
@@ -154,7 +156,7 @@
             // 
             // btn_SelectionSort
             // 
-            this.btn_SelectionSort.Location = new System.Drawing.Point(308, 300);
+            this.btn_SelectionSort.Location = new System.Drawing.Point(374, 399);
             this.btn_SelectionSort.Name = "btn_SelectionSort";
             this.btn_SelectionSort.Size = new System.Drawing.Size(123, 47);
             this.btn_SelectionSort.TabIndex = 14;
@@ -164,7 +166,7 @@
             // 
             // btn_ShellSort
             // 
-            this.btn_ShellSort.Location = new System.Drawing.Point(466, 300);
+            this.btn_ShellSort.Location = new System.Drawing.Point(532, 399);
             this.btn_ShellSort.Name = "btn_ShellSort";
             this.btn_ShellSort.Size = new System.Drawing.Size(123, 47);
             this.btn_ShellSort.TabIndex = 15;
@@ -174,7 +176,7 @@
             // 
             // btn_BubbleSort
             // 
-            this.btn_BubbleSort.Location = new System.Drawing.Point(161, 300);
+            this.btn_BubbleSort.Location = new System.Drawing.Point(227, 399);
             this.btn_BubbleSort.Name = "btn_BubbleSort";
             this.btn_BubbleSort.Size = new System.Drawing.Size(123, 47);
             this.btn_BubbleSort.TabIndex = 16;
@@ -184,7 +186,7 @@
             // 
             // btn_MergeSort
             // 
-            this.btn_MergeSort.Location = new System.Drawing.Point(161, 373);
+            this.btn_MergeSort.Location = new System.Drawing.Point(227, 472);
             this.btn_MergeSort.Name = "btn_MergeSort";
             this.btn_MergeSort.Size = new System.Drawing.Size(123, 47);
             this.btn_MergeSort.TabIndex = 17;
@@ -194,7 +196,7 @@
             // 
             // btn_QuickSort
             // 
-            this.btn_QuickSort.Location = new System.Drawing.Point(308, 373);
+            this.btn_QuickSort.Location = new System.Drawing.Point(374, 472);
             this.btn_QuickSort.Name = "btn_QuickSort";
             this.btn_QuickSort.Size = new System.Drawing.Size(123, 47);
             this.btn_QuickSort.TabIndex = 18;
@@ -204,7 +206,7 @@
             // 
             // btn_CountingSort
             // 
-            this.btn_CountingSort.Location = new System.Drawing.Point(466, 373);
+            this.btn_CountingSort.Location = new System.Drawing.Point(532, 472);
             this.btn_CountingSort.Name = "btn_CountingSort";
             this.btn_CountingSort.Size = new System.Drawing.Size(123, 47);
             this.btn_CountingSort.TabIndex = 19;
@@ -216,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 453);
+            this.ClientSize = new System.Drawing.Size(798, 544);
             this.Controls.Add(this.btn_CountingSort);
             this.Controls.Add(this.btn_QuickSort);
             this.Controls.Add(this.btn_MergeSort);

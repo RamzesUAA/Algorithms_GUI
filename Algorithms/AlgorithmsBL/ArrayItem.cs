@@ -9,7 +9,7 @@ namespace AlgorithmsBL
     public class ArrayItem
     {
         private Random random = new Random();
-        public double[] Array;
+        public double[] Array { get; set; }
         public ArrayItem()
         {
         }
@@ -38,6 +38,34 @@ namespace AlgorithmsBL
                     Array[i] = Math.Round(Math.Sqrt(Math.Abs(Array[i] - 10)));
                 }
             }
+        }
+
+        public void DeleteMostFrequncyElement()
+        {
+            double frequencyEl = int.MinValue;
+            int counterMax = 0;
+            foreach(var i in Array)
+            {
+                int counter = 0;
+                foreach(var j in Array)
+                {
+                    if(i == j)
+                    {
+                        ++counter;
+                    }
+                }
+                if(counterMax < counter)
+                {
+                    counterMax = counter;
+                    frequencyEl = i;
+                }   
+            }
+
+            if(counterMax >1 )
+            {
+                Array = Array.Where(p => p != frequencyEl).ToArray();
+            }
+
         }
     }
 }

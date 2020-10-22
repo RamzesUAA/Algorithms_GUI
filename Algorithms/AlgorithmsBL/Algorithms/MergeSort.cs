@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,89 +9,105 @@ namespace AlgorithmsBL.Algorithms
 {
     public class MergeSort
     {
-        int Rows;
-        int Columns;
-        public MergeSort(int x, int y)
+
+        public MergeSort()
         {
-            Rows = x;
-            Columns = y;
         }
-        private double[][] Sort(double[][] items, int countColumns)
+       
+       
+      
+
+        void MergeHalves(double[,] matr, int size, int left, int mid, int right)
         {
-            if (items.Length == 1)
+
+            int colCount1 = mid - left + 1;
+            int colCount2 = right - mid;
+
+            double[,] tmpMatr1 = new double[size,size];
+            double[,] tmpMatr2 = new double[size,size];
+
+
+            for (int q = 0; q < colCount1; ++q)
             {
-                return items;
+                for (int z = 0; z < size; ++z)
+                    tmpMatr1[z,q] = matr[z,left + q];
             }
 
-            var mid = countColumns / 2;
 
-
-            double[][] left = new double[Rows][];
-            for(int i = 0; i < mid; ++i)
+            for (int q = 0; q < colCount2; ++q)
             {
-                for(int j = 0; j < Rows; ++j)
+                for (int z = 0; z < size; ++z)
+                    tmpMatr2[z,q] = matr[z,mid + 1 + q];
+            }
+
+            int i = 0, j = 0, k = left;
+
+            while (i < colCount1 && j < colCount2)
+            {
+
+                if (tmpMatr1[0,i] > tmpMatr2[0,j])
                 {
-                    left[j][i] = items[j][i];
+                    for (int h = 0; h < size; ++h)
+                        matr[h,k] = tmpMatr1[h,i];
+                    ++i;
                 }
+
+                else
+                {
+                    for (int h = 0; h < size; ++h)
+                        matr[h,k] = tmpMatr2[h,j];
+                    ++j;
+                }
+                ++k;
             }
 
-            double[][] right = new double[Rows][];
-            int k = 0;
-            for (int i = mid; i < Columns; ++i)
+
+            while (i < colCount1)
             {
-                for (int j = 0; j < Rows; ++j)
-                {
-                    right[j][k] = items[j][i];
-                }
-                k++;
+
+                for (int h = 0; h < size; ++h)
+                    matr[h,k] = tmpMatr1[h,i];
+
+                ++k;
+                ++i;
             }
-            return Merge(Sort(left, mid), Sort(right, mid));
+
+            while (j < colCount2)
+            {
+                for (int h = 0; h < size; ++h)
+                    matr[h,k] = tmpMatr2[h,j];
+
+                ++k;
+                ++j;
+            }
         }
 
-        private double[][] Merge(double[][] left, double[][] right)
+        int counter = 0;
+        public void mergeSort(double[,] matr, int size, int left, int right, ref string str)
         {
-            var length = Columns;
-            var leftPointer = 0;
-            var rightPointer = 0;
-
-            var result = new double[Rows][];
-            int counter = 0;
-            for (int i = 0; i < length; i++)
+            if(left<right)
             {
-                if (leftPointer < left.Length && rightPointer < right.Length)
+                int mid = (left + right) / 2;
+                mergeSort(matr, size, left, mid, ref str);
+                mergeSort(matr, size, mid + 1, right, ref str);
+                MergeHalves(matr, size, left, mid, right);
+
+                str += $"Step : {counter}";
+                str += "Array: \n";
+
+                for (int i = 0; i < size; ++i)
                 {
-                    if (left[0][leftPointer] < right[0][rightPointer])
-                    {
-                        for(int q = 0; q  < Rows; ++q)
-                        {
-                            result[q][i] = left[q][i];
-                        }
-                        leftPointer++;
-                    }
-                    else
-                    {
-                        for (int q = 0; q < Rows; ++q)
-                        {
-                            result[q][i] = right[q][i];
-                        }
-                        rightPointer++;
-                    }
+
+                    for (int j = 0; j < size; ++j)
+                        str += $"{matr[i, j]}, ";
+                    str += $"\n";
                 }
-                //else
-                //{
-                //    if (rightPointer < right.Count)
-                //    {
-                //        result.Add(right[rightPointer]);
-                //        rightPointer++;
-                //    }
-                //    else
-                //    {
-                //        result.Add(left[leftPointer]);
-                //        leftPointer++;
-                //    }
-                //}
+                str += "\n";
+
+                ++counter;
+
+
             }
-            return result;
         }
-    }
+	}
 }
