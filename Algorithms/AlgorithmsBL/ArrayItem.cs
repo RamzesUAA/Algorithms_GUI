@@ -39,6 +39,16 @@ namespace AlgorithmsBL
                 }
             }
         }
+        public void SetSinToNegativeDigits()
+        { 
+            for(int i =  0; i < Array.Length; ++i)
+            {
+                if(Array[i] <0)
+                {
+                    Array[i] = Math.Round(Math.Sin(Array[i]),1);
+                }
+            }
+        }
 
         public void DeleteMostFrequncyElement()
         {

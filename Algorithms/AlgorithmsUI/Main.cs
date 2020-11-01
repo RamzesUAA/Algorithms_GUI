@@ -77,7 +77,7 @@ namespace AlgorithmsUI
                 dataGridView.Columns[i].Width = 50;
             }
         }
-
+       
         void SetDataGridViewWithString(DataGridView dataGridView)
         {
             if (Products.Count == 0) return;
@@ -152,6 +152,15 @@ namespace AlgorithmsUI
                 SetDataGridViewWithArray(dataGridView_InitialArray);
             }
         }
+
+        private void InputArrayForSixthLab()
+        {
+            InputArrayFrom inputIntArray = new InputArrayFrom(ArrayItem);
+            if (inputIntArray.ShowDialog() == DialogResult.OK)
+            {
+                SetDataGridViewWithArray(dataGridView_InitialArray);
+            }
+        }   
         private void btn_EnterArray_Click(object sender, System.EventArgs e)
         {
             switch (comboBox_ChooseLab.SelectedItem.ToString())
@@ -172,6 +181,10 @@ namespace AlgorithmsUI
                 case "laba5":
                     clearGridsAndArray();
                     InputArrayForFifthLab();
+                    break;
+                case "laba6":
+                    clearGridsAndArray();
+                    InputArrayForSixthLab();
                     break;
                 case null:
                     MessageBox.Show("Enter number of laba");
@@ -308,7 +321,7 @@ namespace AlgorithmsUI
                     btn_ShellSort.Enabled = false;
                     btn_MergeSort.Enabled = false;
                     btn_QuickSort.Enabled = false;
-                    btn_CountingSort.Enabled = false;
+                    btn_CountingSort.Enabled = true;
                     clearGridsAndArray();
                     break;
                 case null:
@@ -350,7 +363,27 @@ namespace AlgorithmsUI
 
         private void btn_CountingSort_Click(object sender, EventArgs e)
         {
+            CountingSort countingSort = new CountingSort();
+            Stopwatch stopwatch = new Stopwatch();
+            Steps = "";
+            stopwatch.Start();
+            Steps += "Before modifing(sin): ";
+            foreach(var item in ArrayItem.Array)
+            {
+                Steps += $"{item} ";
+            }
+            
+            ArrayItem.SetSinToNegativeDigits();
 
+            Steps += "\nAfter modifing(sin): ";
+            foreach (var item in ArrayItem.Array)
+            {
+                Steps += $"{item} ";
+            }
+            countingSort.countingSort(ArrayItem.Array, ref Steps);
+            stopwatch.Stop();
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            SetDataGridViewWithArray(dataGridView_ResultArray);
         }
     }
 }

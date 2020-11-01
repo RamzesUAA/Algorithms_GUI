@@ -59,6 +59,12 @@
     <Compile Include="InputArrayFrom.Designer.cs">
       <DependentUpon>InputArrayFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputIntArray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputIntArray.Designer.cs">
+      <DependentUpon>InputIntArray.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputArrayFrom.resx">
       <DependentUpon>InputArrayFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputIntArray.resx">
+      <DependentUpon>InputIntArray.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputProductForm.resx">
       <DependentUpon>InputProductForm.cs</DependentUpon>

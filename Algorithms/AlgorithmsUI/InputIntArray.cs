@@ -11,17 +11,19 @@ using System.Windows.Forms;
 
 namespace AlgorithmsUI
 {
-    public partial class InputArrayFrom : Form
+    public partial class InputIntArray : Form
     {
-        ArrayItem ArrayItem;
-        public InputArrayFrom()
+
+        ArrayItem Array;
+        public InputIntArray()
         {
             InitializeComponent();
         }
-        public InputArrayFrom(ArrayItem arrayItem):this()
+        public InputIntArray(ArrayItem array):this()
         {
-            ArrayItem = arrayItem;
+            Array = array;
         }
+
 
         void SetDataGridView(int n)
         {
@@ -49,24 +51,20 @@ namespace AlgorithmsUI
                 dataGridView_Array.Columns[i].Width = 50;
             }
         }
+        private void btn_Ok_Click(object sender, EventArgs e)
+        {
+            //for (int i = 0; i < Array.IntArray.Length; ++i)
+            //{
+            //    Array.IntArray[i] = double.Parse(dataGridView_Array.Rows[1].Cells[i].Value.ToString());
+            //}
+
+            //DialogResult = DialogResult.OK;
+        }
 
         private void btn_SubmitDimension_Click(object sender, EventArgs e)
         {
-            SetDataGridView((int)numericUpDown_Dimension.Value);
-            ArrayItem.Array = new double[(int)numericUpDown_Dimension.Value];
-           
-        }
-
-        private void btn_Ok_Click(object sender, EventArgs e)
-        {
-
-            for (int i = 0; i < ArrayItem.Array.Length; ++i)
-            {
-                ArrayItem.Array[i] = double.Parse(dataGridView_Array.Rows[1].Cells[i].Value.ToString());
-            }
-
-            DialogResult = DialogResult.OK;
-
+            //SetDataGridView((int)numericUpDown_Dimension.Value);
+            //Array.IntArray = new double[(int)numericUpDown_Dimension.Value];
         }
     }
 }

@@ -138,7 +138,8 @@
             "laba2",
             "laba3",
             "laba4",
-            "laba5"});
+            "laba5",
+            "laba6"});
             this.comboBox_ChooseLab.Location = new System.Drawing.Point(15, 135);
             this.comboBox_ChooseLab.Name = "comboBox_ChooseLab";
             this.comboBox_ChooseLab.Size = new System.Drawing.Size(121, 21);
