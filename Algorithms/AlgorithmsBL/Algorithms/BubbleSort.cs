@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -37,7 +38,7 @@ namespace AlgorithmsBL.Algorithms
         }
         //--------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------
-        public void bubbleSort(int[] arr)
+        public void bubbleSort(int[] arr, CancellationToken token)
         {
             
             int size = arr.Length;
@@ -51,6 +52,10 @@ namespace AlgorithmsBL.Algorithms
 
                         Swap(ref arr[j], ref arr[j + 1]);
                         F = true;
+                    }
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
                     }
                 }
                 if (F == false) break;

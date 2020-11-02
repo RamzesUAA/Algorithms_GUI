@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -38,7 +39,7 @@ namespace AlgorithmsBL.Algorithms
 
         //--------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------
-        public void shellSort(int[] arr)
+        public void shellSort(int[] arr, CancellationToken token)
         {
             var d = arr.Length / 2;
             while (d >= 1)
@@ -50,6 +51,10 @@ namespace AlgorithmsBL.Algorithms
                     {
                         Swap(ref arr[j], ref arr[j - d]);
                         j = j - d;
+                        if (token.IsCancellationRequested)
+                        {
+                            return;
+                        }
                     }
                 }
                 d = d / 2;

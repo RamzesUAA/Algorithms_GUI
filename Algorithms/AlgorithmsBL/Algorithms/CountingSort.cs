@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -62,7 +63,7 @@ namespace AlgorithmsBL.Algorithms
 
 
 
-        public void countingSort(int[] array)
+        public void countingSort(int[] array, CancellationToken token)
         {
             int[] sortedArray = new int[array.Length];
 
@@ -70,6 +71,10 @@ namespace AlgorithmsBL.Algorithms
             int maxVal = array[0];
             for (int i = 1; i < array.Length; i++)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 if (array[i] < minVal) minVal = array[i];
                 else if (array[i] > maxVal) maxVal = array[i];
             }
@@ -79,6 +84,10 @@ namespace AlgorithmsBL.Algorithms
         
             for (int i = 0; i < array.Length; i++)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 int indexF = (array[i] - minVal);
                 counts[indexF]++;
             }
@@ -86,11 +95,19 @@ namespace AlgorithmsBL.Algorithms
             counts[0]--;
             for (int i = 1; i < counts.Length; i++)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 counts[i] = counts[i] + counts[i - 1];
             }
 
             for (int i = array.Length - 1; i >= 0; i--)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 int indexR = (array[i] - minVal);
                 sortedArray[counts[indexR]--] = array[i];
             }
@@ -98,6 +115,10 @@ namespace AlgorithmsBL.Algorithms
             int counter = 0;
             foreach (int aa in sortedArray)
             {
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
                 array[counter] = aa;
                 counter++;
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -137,14 +138,18 @@ namespace AlgorithmsBL.Algorithms
             }
         }
 
-        public void mergeSort(int[] input, int left, int right)
+        public void mergeSort(int[] input, int left, int right, CancellationToken token)
         {
+            if (token.IsCancellationRequested)
+            {
+                return;
+            }
             if (left < right)
             {
                 int middle = (left + right) / 2;
 
-                mergeSort(input, left, middle);
-                mergeSort(input, middle + 1, right);
+                mergeSort(input, left, middle, token);
+                mergeSort(input, middle + 1, right, token);
 
                 Merge(input, left, middle, right);
             }

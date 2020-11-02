@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -67,7 +68,7 @@ namespace AlgorithmsBL.Algorithms
         //--------------------------------------------------------------------------------
 
 
-        public void Quick_Sort(int[] arr, int left, int right)
+        public void Quick_Sort(int[] arr, int left, int right, CancellationToken token)
         {
             if (left < right)
             {
@@ -75,11 +76,11 @@ namespace AlgorithmsBL.Algorithms
 
                 if (pivot > 1)
                 {
-                    Quick_Sort(arr, left, pivot - 1);
+                    Quick_Sort(arr, left, pivot - 1,  token);
                 }
                 if (pivot + 1 < right)
                 {
-                    Quick_Sort(arr, pivot + 1, right);
+                    Quick_Sort(arr, pivot + 1, right, token);
                 }
             }
 

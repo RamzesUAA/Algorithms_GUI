@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlgorithmsBL.Algorithms
@@ -39,7 +40,7 @@ namespace AlgorithmsBL.Algorithms
         }
         //--------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------
-        public void selectionSort(int[] array)
+        public void selectionSort(int[] array, CancellationToken token)
         {
             int size = array.Length;
             for (int i = 0; i < size - 1; i++)
@@ -50,6 +51,10 @@ namespace AlgorithmsBL.Algorithms
                     if (array[min] > array[j])
                     {
                         min = j;
+                    }
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
                     }
                 }
                 var temp = array[min];
