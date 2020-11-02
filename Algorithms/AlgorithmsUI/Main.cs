@@ -344,7 +344,7 @@ namespace AlgorithmsUI
             stopwatch.Stop();
 
             // Write result
-            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 4).ToString() + " sec.";
             SetDataGridViewWithTwoDimensionsArray(dataGridView_ResultArray);
         }
 
@@ -356,7 +356,7 @@ namespace AlgorithmsUI
             stopwatch.Start();
             quickSort.Quick_Sort(ArrayItem.Array, 0, ArrayItem.Array.Length - 1);
             stopwatch.Stop();
-            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 4).ToString() + " sec.";
             SetDataGridViewWithArray(dataGridView_ResultArray);
 
         }
@@ -382,8 +382,14 @@ namespace AlgorithmsUI
             }
             countingSort.countingSort(ArrayItem.Array, ref Steps);
             stopwatch.Stop();
-            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 5).ToString() + " sec.";
+            label_Time.Text = Math.Round(stopwatch.Elapsed.TotalSeconds, 4).ToString() + " sec.";
             SetDataGridViewWithArray(dataGridView_ResultArray);
+        }
+
+        private void btn_ComparingMode_Click(object sender, EventArgs e)
+        {
+            ComparisonForm comparisonForm = new ComparisonForm();
+            comparisonForm.ShowDialog();
         }
     }
 }

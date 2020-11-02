@@ -35,5 +35,26 @@ namespace AlgorithmsBL.Algorithms
                 if (F == false) break;
             }
         }
+        //--------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------
+        public void bubbleSort(int[] arr)
+        {
+            
+            int size = arr.Length;
+            for (int i = 0; i < size; i++)
+            {
+                bool F = false;
+                for (int j = 0; j < size - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+
+                        Swap(ref arr[j], ref arr[j + 1]);
+                        F = true;
+                    }
+                }
+                if (F == false) break;
+            }
+        }
     }
 }

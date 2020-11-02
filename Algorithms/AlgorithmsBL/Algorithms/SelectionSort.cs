@@ -37,5 +37,25 @@ namespace AlgorithmsBL.Algorithms
                 products[i] = temp;
             }   
         }
+        //--------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------
+        public void selectionSort(int[] array)
+        {
+            int size = array.Length;
+            for (int i = 0; i < size - 1; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < size; j++)
+                {
+                    if (array[min] > array[j])
+                    {
+                        min = j;
+                    }
+                }
+                var temp = array[min];
+                array[min] = array[i];
+                array[i] = temp;
+            }
+        }
     }
 }

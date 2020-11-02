@@ -35,5 +35,25 @@ namespace AlgorithmsBL.Algorithms
                 d = d / 2;
             }
         }
+
+        //--------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------
+        public void shellSort(int[] arr)
+        {
+            var d = arr.Length / 2;
+            while (d >= 1)
+            {
+                for (var i = d; i < arr.Length; i++)
+                {
+                    var j = i;
+                    while ((j >= d) && (arr[j - d] > arr[j]))
+                    {
+                        Swap(ref arr[j], ref arr[j - d]);
+                        j = j - d;
+                    }
+                }
+                d = d / 2;
+            }
+        }
     }
 }

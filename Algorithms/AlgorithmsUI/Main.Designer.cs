@@ -44,6 +44,7 @@
             this.btn_MergeSort = new System.Windows.Forms.Button();
             this.btn_QuickSort = new System.Windows.Forms.Button();
             this.btn_CountingSort = new System.Windows.Forms.Button();
+            this.btn_ComparingMode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InitialArray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ResultArray)).BeginInit();
             this.SuspendLayout();
@@ -215,11 +216,22 @@
             this.btn_CountingSort.UseVisualStyleBackColor = true;
             this.btn_CountingSort.Click += new System.EventHandler(this.btn_CountingSort_Click);
             // 
+            // btn_ComparingMode
+            // 
+            this.btn_ComparingMode.Location = new System.Drawing.Point(674, 25);
+            this.btn_ComparingMode.Name = "btn_ComparingMode";
+            this.btn_ComparingMode.Size = new System.Drawing.Size(111, 47);
+            this.btn_ComparingMode.TabIndex = 20;
+            this.btn_ComparingMode.Text = "Comparing algorithms mode";
+            this.btn_ComparingMode.UseVisualStyleBackColor = true;
+            this.btn_ComparingMode.Click += new System.EventHandler(this.btn_ComparingMode_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 544);
+            this.Controls.Add(this.btn_ComparingMode);
             this.Controls.Add(this.btn_CountingSort);
             this.Controls.Add(this.btn_QuickSort);
             this.Controls.Add(this.btn_MergeSort);
@@ -265,6 +277,7 @@
         private System.Windows.Forms.Button btn_MergeSort;
         private System.Windows.Forms.Button btn_QuickSort;
         private System.Windows.Forms.Button btn_CountingSort;
+        private System.Windows.Forms.Button btn_ComparingMode;
     }
 }
 
