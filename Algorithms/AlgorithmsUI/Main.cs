@@ -391,5 +391,13 @@ namespace AlgorithmsUI
             ComparisonForm comparisonForm = new ComparisonForm();
             comparisonForm.ShowDialog();
         }
+
+        private void button_SearchAlgorithms_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchingForm searchingForm = new SearchingForm();
+            searchingForm.Closed += (s, args) => this.Close();
+            searchingForm.Show();
+        }
     }
 }
