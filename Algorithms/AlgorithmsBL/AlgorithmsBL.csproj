@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\BinnarySearch.cs" />
+    <Compile Include="Books.cs" />
     <Compile Include="Algorithms\BubbleSort.cs" />
     <Compile Include="Algorithms\CountingSort.cs" />
     <Compile Include="Algorithms\LinearSearching.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="Algorithms\ShellSort.cs" />
     <Compile Include="Algorithms\SortBase.cs" />
     <Compile Include="ArrayItem.cs" />
+    <Compile Include="Book.cs" />
     <Compile Include="PairItem.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
