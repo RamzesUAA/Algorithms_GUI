@@ -399,5 +399,13 @@ namespace AlgorithmsUI
             searchingForm.Closed += (s, args) => this.Close();
             searchingForm.Show();
         }
+
+        private void button_SerachingStringAlgorithms_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StringSerachingAlgorithms stringSearchingForm = new StringSerachingAlgorithms();
+            stringSearchingForm.Closed += (s, args) => this.Close();
+            stringSearchingForm.Show();
+        }
     }
 }

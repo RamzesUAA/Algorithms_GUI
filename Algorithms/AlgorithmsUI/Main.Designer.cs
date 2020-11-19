@@ -46,6 +46,7 @@
             this.btn_CountingSort = new System.Windows.Forms.Button();
             this.btn_ComparingMode = new System.Windows.Forms.Button();
             this.button_SearchAlgorithms = new System.Windows.Forms.Button();
+            this.button_SerachingStringAlgorithms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_InitialArray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ResultArray)).BeginInit();
             this.SuspendLayout();
@@ -238,11 +239,23 @@
             this.button_SearchAlgorithms.UseVisualStyleBackColor = false;
             this.button_SearchAlgorithms.Click += new System.EventHandler(this.button_SearchAlgorithms_Click);
             // 
+            // button_SerachingStringAlgorithms
+            // 
+            this.button_SerachingStringAlgorithms.BackColor = System.Drawing.Color.PeachPuff;
+            this.button_SerachingStringAlgorithms.Location = new System.Drawing.Point(674, 171);
+            this.button_SerachingStringAlgorithms.Name = "button_SerachingStringAlgorithms";
+            this.button_SerachingStringAlgorithms.Size = new System.Drawing.Size(111, 48);
+            this.button_SerachingStringAlgorithms.TabIndex = 22;
+            this.button_SerachingStringAlgorithms.Text = "String Searching Algorithms";
+            this.button_SerachingStringAlgorithms.UseVisualStyleBackColor = false;
+            this.button_SerachingStringAlgorithms.Click += new System.EventHandler(this.button_SerachingStringAlgorithms_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 544);
+            this.Controls.Add(this.button_SerachingStringAlgorithms);
             this.Controls.Add(this.button_SearchAlgorithms);
             this.Controls.Add(this.btn_ComparingMode);
             this.Controls.Add(this.btn_CountingSort);
@@ -292,6 +305,7 @@
         private System.Windows.Forms.Button btn_CountingSort;
         private System.Windows.Forms.Button btn_ComparingMode;
         private System.Windows.Forms.Button button_SearchAlgorithms;
+        private System.Windows.Forms.Button button_SerachingStringAlgorithms;
     }
 }
 

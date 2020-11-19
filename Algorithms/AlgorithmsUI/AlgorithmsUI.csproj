@@ -52,6 +52,12 @@
     <Compile Include="ComparisonForm.Designer.cs">
       <DependentUpon>ComparisonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DirectStringSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectStringSearchForm.Designer.cs">
+      <DependentUpon>DirectStringSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,8 +103,17 @@
     <Compile Include="SearchingForm.Designer.cs">
       <DependentUpon>SearchingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StringSerachingAlgorithms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringSerachingAlgorithms.Designer.cs">
+      <DependentUpon>StringSerachingAlgorithms.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ComparisonForm.resx">
       <DependentUpon>ComparisonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectStringSearchForm.resx">
+      <DependentUpon>DirectStringSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
@@ -129,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="SearchingForm.resx">
       <DependentUpon>SearchingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringSerachingAlgorithms.resx">
+      <DependentUpon>StringSerachingAlgorithms.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
