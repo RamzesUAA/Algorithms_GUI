@@ -89,6 +89,12 @@
     <Compile Include="InputTwoDimensionalArrayForm.Designer.cs">
       <DependentUpon>InputTwoDimensionalArrayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KnuthMorrisPrattSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KnuthMorrisPrattSearchForm.Designer.cs">
+      <DependentUpon>KnuthMorrisPrattSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputTwoDimensionalArrayForm.resx">
       <DependentUpon>InputTwoDimensionalArrayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KnuthMorrisPrattSearchForm.resx">
+      <DependentUpon>KnuthMorrisPrattSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

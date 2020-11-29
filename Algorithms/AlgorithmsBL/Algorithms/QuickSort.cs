@@ -83,7 +83,6 @@ namespace AlgorithmsBL.Algorithms
                     Quick_Sort(arr, pivot + 1, right, token);
                 }
             }
-
         }
 
         public int Partition(int[] arr, int left, int right)

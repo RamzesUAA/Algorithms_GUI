@@ -27,7 +27,10 @@ namespace AlgorithmsUI
 
         private void button_Knuth_MorrisAndPratt_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            KnuthMorrisPrattSearchForm stringSearchingForm = new KnuthMorrisPrattSearchForm();
+            stringSearchingForm.Closed += (s, args) => this.Close();
+            stringSearchingForm.Show();
         }
 
         private void button_Boyer_Moore_Click(object sender, EventArgs e)
