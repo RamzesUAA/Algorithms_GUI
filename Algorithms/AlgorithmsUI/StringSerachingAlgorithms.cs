@@ -20,7 +20,7 @@ namespace AlgorithmsUI
         private void button_DirectStringSearch_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DirectStringSearchForm stringSearchingForm = new DirectStringSearchForm();
+            var stringSearchingForm = new DirectStringSearchForm();
             stringSearchingForm.Closed += (s, args) => this.Close();
             stringSearchingForm.Show();
         }
@@ -28,14 +28,17 @@ namespace AlgorithmsUI
         private void button_Knuth_MorrisAndPratt_Click(object sender, EventArgs e)
         {
             this.Hide();
-            KnuthMorrisPrattSearchForm stringSearchingForm = new KnuthMorrisPrattSearchForm();
+            var stringSearchingForm = new KnuthMorrisPrattSearchForm();
             stringSearchingForm.Closed += (s, args) => this.Close();
             stringSearchingForm.Show();
         }
 
         private void button_Boyer_Moore_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            var stringSearchingForm = new BoyerMooreSearchForm();
+            stringSearchingForm.Closed += (s, args) => this.Close();
+            stringSearchingForm.Show();
         }
     }
 }

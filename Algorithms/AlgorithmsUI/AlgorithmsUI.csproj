@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoyerMooreSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoyerMooreSearchForm.Designer.cs">
+      <DependentUpon>BoyerMooreSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComparisonForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="StringSerachingAlgorithms.Designer.cs">
       <DependentUpon>StringSerachingAlgorithms.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BoyerMooreSearchForm.resx">
+      <DependentUpon>BoyerMooreSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComparisonForm.resx">
       <DependentUpon>ComparisonForm.cs</DependentUpon>
     </EmbeddedResource>
